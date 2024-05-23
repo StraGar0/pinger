@@ -10,6 +10,26 @@ import requests
 
 console = Console()
 
+def check_for_updates():
+    update_url = "https://raw.githubusercontent.com/StraGar0/pinger/main/main.py"
+    local_file = __file__
+    
+    response = requests.get(update_url)
+    if response.status_code == 200:
+        remote_code = response.text
+        with open(local_file, 'r') as file:
+            local_code = file.read()
+        if local_code != remote_code:
+            with open(local_file, 'w') as file:
+                file.write(remote_code)
+            console.print(Text("Update applied. Please restart the program.", style="bold green"))
+            time.sleep(5)
+            exit()
+    else:
+        console.print(Text("Could not check for updates.", style="bold red"))
+
+check_for_updates()
+
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -124,12 +144,12 @@ def ip_info():
     clear_screen()
 
 def main():
+    check_for_updates()
     while True:
         clear_screen()
         title = Text("TOOLS", style="bold blue on black", justify="center")
         subtitle = Text("🔧 DEV STRAGAR ", style="bold magenta on black", justify="center")
         
-
         console.print(Panel(title, style="on black"))
         console.print(Panel(subtitle, style="on black"))
 
