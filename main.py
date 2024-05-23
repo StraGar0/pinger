@@ -57,7 +57,7 @@ def print_status(host, port, protocol, status):
         status_text.append("root", style="bold white")
         status_text.append(f"@{user_name}", style="bold red")
         status_text.append(": ", style="bold white")
-        status_text.append("CONNECTED ", style=Style(color="white", bgcolor="green"))
+        status_text.append("CON ", style=Style(color="white", bgcolor="green"))
         status_text.append(" to ", style="bold white")
         status_text.append("[", style="bold white")
         status_text.append(f"{host}:{port}", style="bold green")
@@ -126,7 +126,7 @@ def ip_info():
 def check_for_updates():
     console.print(Text("Checking for updates...", style="bold blue"))
     time.sleep(1)
-    update_url = "https://raw.githubusercontent.com/StraGar0/pinger/main.py"
+    update_url = "https://raw.githubusercontent.com/StraGar0/pinger/main/main.py"
     local_file = __file__
     
     response = requests.get(update_url)
@@ -173,7 +173,7 @@ def main():
 
 def ping_menu():
     clear_screen()
-    ping_menu_text = Text("NEGGER Menu:\n", style="bold magenta")
+    ping_menu_text = Text("Ping Menu:\n", style="bold magenta")
     ping_menu_text.append("1. TCP\n", style="cyan")
     ping_menu_text.append("2. UDP\n", style="cyan")
     ping_menu_text.append("3. ICMP\n", style="cyan")
