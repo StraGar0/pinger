@@ -108,7 +108,7 @@ def ip_info():
     response = requests.get(url)
     if response.status_code == 200:
         ip_data = response.json()
-        ip_info_text = Text("\n[+] IP Information:\n", style="bold magenta")
+        ip_info_text = Text("\n[+] IP :\n", style="bold magenta")
         ip_info_text.append(f"IP Address: {ip_data.get('ip')}\n", style="cyan")
         ip_info_text.append(f"Hostname: {ip_data.get('hostname')}\n", style="cyan")
         ip_info_text.append(f"City: {ip_data.get('city')}\n", style="cyan")
