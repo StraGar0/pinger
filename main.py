@@ -152,7 +152,7 @@ def main():
     while True:
         clear_screen()
         title = Text("TOOLS", style="bold blue on black", justify="center")
-        subtitle = Text("🔧 DEV STRAGAR ", style="bold magenta on black", justify="center")
+        subtitle = Text(" DEV STRAGAR ", style="bold magenta on black", justify="center")
         
         console.print(Panel(title, style="on black"))
         console.print(Panel(subtitle, style="on black"))
